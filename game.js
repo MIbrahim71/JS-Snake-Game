@@ -1,3 +1,4 @@
+import { drawFood } from "./food.js";
 import { updateSnake, drawSnake, snakeSpeed } from "./snake.js";
 
 let lastRenderTime = 0;
@@ -30,4 +31,5 @@ const update = () => {
 const draw = () => {
   gameBoard.innerHTML = ""; // Remove previous pieces behind snake
   drawSnake(gameBoard);
+  drawFood(gameBoard);
 };
