@@ -1,10 +1,7 @@
-import {
-  update as updateSnake,
-  draw as drawSnake,
-  snakeSpeed,
-} from "./snake.js";
+import { updateSnake, drawSnake, snakeSpeed } from "./snake.js";
 
 let lastRenderTime = 0;
+const gameBoard = document.getElementById("game-board");
 // const snakeSpeed = 2; // how many times snake moves per second
 
 // Update the snakes position
@@ -31,5 +28,6 @@ const update = () => {
 
 // Based on update, draws snake and food in correct positions
 const draw = () => {
-  drawSnake();
+  gameBoard.innerHTML = ""; // Remove previous pieces behind snake
+  drawSnake(gameBoard);
 };

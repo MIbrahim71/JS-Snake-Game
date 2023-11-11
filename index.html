@@ -7,6 +7,11 @@
     <title>Snake</title>
 
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
       body {
         width: 100vw;
         height: 100vh;
@@ -15,8 +20,8 @@
         align-items: center;
       }
       #game-board {
-        width: 100vmin;
-        height: 100vmin;
+        width: 80%;
+        height: 80%;
         background-color: black;
         display: grid;
         grid-template-columns: repeat(21, 1fr);
@@ -25,7 +30,7 @@
 
       .snake {
         background-color: green;
-        border: 0.25vmin solid green;
+        border: 0.25vmin solid black;
       }
 
       .food {
