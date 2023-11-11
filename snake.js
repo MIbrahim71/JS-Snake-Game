@@ -5,8 +5,9 @@ const snakeBody = [
   { x: 11, y: 11 },
   { x: 12, y: 11 },
   { x: 13, y: 11 },
-]; // middle of screen
+];
 
+// POSITION
 export const updateSnake = () => {
   const inputDirection = getInputDirection();
 
@@ -19,9 +20,8 @@ export const updateSnake = () => {
   snakeBody[0].y += inputDirection.y;
 };
 
+// UI
 export const drawSnake = (gameBoard) => {
-  // console.log("Draw snake");
-
   // Loop through each segment (piece) of the snake
   snakeBody.forEach((segment) => {
     // Snake starts game board at particular x y coordinate
