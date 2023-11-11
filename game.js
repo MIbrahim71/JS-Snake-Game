@@ -1,5 +1,11 @@
+import {
+  update as updateSnake,
+  draw as drawSnake,
+  snakeSpeed,
+} from "./snake.js";
+
 let lastRenderTime = 0;
-const snakeSpeed = 2; // how many times snake moves per second
+// const snakeSpeed = 2; // how many times snake moves per second
 
 // Update the snakes position
 function main(currentTime) {
@@ -11,15 +17,19 @@ function main(currentTime) {
   // console.log("Render"); // prints 2 times/s
   lastRenderTime = currentTime;
 
-  // Moves snake to position, shorten/lengthen based on food, determines loss
   update();
 
-  // Based on update, draws snake and food in correct positions
   draw();
 }
 
 window.requestAnimationFrame(main);
 
-const update = () => {};
+// Moves snake to position, shorten/lengthen based on food, determines loss
+const update = () => {
+  updateSnake();
+};
 
-const draw = () => {};
+// Based on update, draws snake and food in correct positions
+const draw = () => {
+  drawSnake();
+};
