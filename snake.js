@@ -19,6 +19,7 @@ export const updateSnake = () => {
 
 // UI
 export const drawSnake = (gameBoard) => {
+  addSegments();
   // Loop through each segment (piece) of the snake
   snakeBody.forEach((segment) => {
     // Snake starts game board at particular x y coordinate
@@ -42,4 +43,13 @@ export const onSnake = (position) => {
 
 const equalPositions = (pos1, pos2) => {
   return pos1.x === pos2.x && pos1.y === pos2.y;
+};
+
+const addSegments = () => {
+  for (let i = 0; i < newSegments; i++) {
+    // Essentially duplicating last piece of the snake, adding to the end
+    snakeBody.push({ ...snakeBody[snakeBody.length - 1] });
+  }
+
+  newSegments = 0;
 };
