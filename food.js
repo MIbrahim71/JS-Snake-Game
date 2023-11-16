@@ -1,9 +1,19 @@
+import { onSnake, expandSnake } from "./snake.js";
+
+const randomNum = () => Math.floor(Math.random() * 21);
 let food = {
-  x: `${Math.floor(Math.random() * 21)}`,
-  y: `${Math.floor(Math.random() * 21)}`,
+  x: randomNum(),
+  y: randomNum(),
 };
 
-const updateFood = () => {};
+const EXPANSION_RATE = 1;
+
+export const updateFood = () => {
+  if (onSnake(food)) {
+    expandSnake(EXPANSION_RATE);
+    food = { x: randomNum(), y: randomNum() };
+  }
+};
 
 export const drawFood = (gameBoard) => {
   const foodElement = document.createElement("div");

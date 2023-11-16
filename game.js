@@ -1,4 +1,4 @@
-import { drawFood } from "./food.js";
+import { drawFood, updateFood } from "./food.js";
 import { updateSnake, drawSnake, snakeSpeed } from "./snake.js";
 
 let lastRenderTime = 0;
@@ -25,6 +25,7 @@ window.requestAnimationFrame(main);
 // Moves snake to position, shorten/lengthen based on food, determines loss
 const update = () => {
   updateSnake();
+  updateFood();
 };
 
 // Based on update, draws snake and food in correct positions
