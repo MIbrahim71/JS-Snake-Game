@@ -16,7 +16,6 @@ function main(currentTime) {
   lastRenderTime = currentTime;
 
   update();
-
   draw();
 }
 

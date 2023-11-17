@@ -1,11 +1,13 @@
 import { getInputDirection } from "./input.js";
 
-export let snakeSpeed = 5;
+export const snakeSpeed = 5;
 const snakeBody = [{ x: 11, y: 11 }];
 let newSegments = 0;
 
 // POSITION
 export const updateSnake = () => {
+  addSegments();
+
   const inputDirection = getInputDirection();
 
   for (let i = snakeBody.length - 2; i >= 0; i--) {
@@ -19,7 +21,6 @@ export const updateSnake = () => {
 
 // UI
 export const drawSnake = (gameBoard) => {
-  addSegments();
   // Loop through each segment (piece) of the snake
   snakeBody.forEach((segment) => {
     // Snake starts game board at particular x y coordinate
